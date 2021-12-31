@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<h1>{{titulo}}</h1>
+
+<button (click)="borrarPrimerHeroe()" [disabled]="heroes.length === 0">Borrar primer heroe</button>
+<button (click)="borrarUltimoHeroe()" [disabled]="heroes.length === 0">Borrar ultimo heroe</button>
+<button (click)="reset()">Reset</button>
+<ul>
+  <li *ngFor="let heroe of heroes; let i = index">{{(i + 1).toString().padStart(2,'0')}} - {{heroe}}</li>
+</ul>
+
+<h3 *ngIf="heroesBorrados.length > 0; else cosaQueLeeAngular">Heroes borrados:
+  <small *ngFor="let heroe of heroesBorrados">{{heroe}} </small>
+</h3>
+<ng-template #cosaQueLeeAngular>
+  <h3>No se ha borrado nada</h3>
+</ng-template>

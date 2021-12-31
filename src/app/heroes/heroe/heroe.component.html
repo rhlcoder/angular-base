@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<h1>{{titulo}}</h1>
+
+<dl>
+  <td>Nombre</td>
+  <dd>{{nombre}}</dd>
+
+  <td>Edad</td>
+  <dd>{{edad}}</dd>
+
+  <td>obtenerNombreYEdad() - method, se invoca con el ()</td>
+  <dd>{{obtenerNombreYEdad()}}</dd>
+
+  <td>nombreCapitalizado - getter, se invoca sin el ()</td>
+  <dd>{{nombreCapitalizado}}</dd>
+</dl>
+
+<button (click)="cambiarNombre()">Cambiar heroe</button>
+<button (click)="cambiarEdad()">Cambiar edad</button>
