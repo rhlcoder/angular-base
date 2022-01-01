@@ -1,16 +1,52 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+interface Personaje {
+  nombre: string;
+  poder: number;
+}
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
-  styles: [
-  ]
+  styles: [],
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent {
+  personajes: Personaje[] = [
+    {
+      nombre: 'krilin',
+      poder: 700,
+    },
+    {
+      nombre: 'GOKU',
+      poder: 15000,
+    },
+    {
+      nombre: 'VeGeTa',
+      poder: 8999,
+    },
+  ];
 
-  constructor() { }
+  nuevo: Personaje = {
+    nombre: '',
+    poder: 0,
+  };
 
-  ngOnInit(): void {
+  agregar(): void {
+    // validar que el string no este vacio
+    if (this.nuevo.nombre.trim().length === 0) {
+      return;
+    }
+    // validar que el numero no sea negativo
+    if (this.nuevo.poder < 0) {
+      return;
+    }
+
+    this.personajes.push(this.nuevo);
+    this.nuevo = {
+      nombre: '',
+      poder: 0,
+    };
+
+    console.log(this.nuevo, 'usando ngSubmit, buena crack');
   }
-
 }
