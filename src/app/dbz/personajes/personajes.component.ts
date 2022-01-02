@@ -6,6 +6,5 @@ import { Personaje } from '../interfaces/dbz.interface';
   templateUrl: './personajes.component.html',
 })
 export class PersonajesComponent {
-  @Input
-  () personajes: Personaje[] = []; // me traigo la propiedad personajes, desde main-page.component.ts
+  @Input() personajes: Personaje[] = []; // me traigo la propiedad personajes, desde main-page.component.ts (el componente padre)
 }

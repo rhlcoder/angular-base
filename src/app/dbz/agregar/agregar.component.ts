@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
 
 @Component({
@@ -7,13 +7,12 @@ import { Personaje } from '../interfaces/dbz.interface';
   styles: [],
 })
 export class AgregarComponent {
-  @Input
-  () personajes: Personaje[] = [];
-
-  nuevo: Personaje = {
+  @Input() nuevo: Personaje = {
     nombre: '',
     poder: 0,
   };
+
+  @Output() nuevoPersonaje: EventEmitter<Personaje> = new EventEmitter();
 
   agregar(): void {
     // validar que el string no este vacio
@@ -25,12 +24,11 @@ export class AgregarComponent {
       return;
     }
 
-    this.personajes.push(this.nuevo);
+    this.nuevoPersonaje.emit(this.nuevo);
+
     this.nuevo = {
       nombre: '',
       poder: 0,
     };
-
-    console.log(this.nuevo, 'usando ngSubmit, buena crack');
   }
 }
