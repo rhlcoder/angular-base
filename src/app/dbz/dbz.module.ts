@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { MainPageComponent } from './main-page/main-page.component';
 import { FormsModule } from '@angular/forms';
 import { PersonajesComponent } from './personajes/personajes.component';
+import { AgregarComponent } from './agregar/agregar.component';
 
 
 
 @NgModule({
-  declarations: [MainPageComponent, PersonajesComponent],
+  declarations: [MainPageComponent, PersonajesComponent, AgregarComponent],
   imports: [CommonModule, FormsModule], // importo el forms para hacer magia con los forms. Tambien esta el reactivo, pero es mas avanzado
   exports: [MainPageComponent],
 })

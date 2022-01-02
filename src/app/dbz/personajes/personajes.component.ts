@@ -4,10 +4,8 @@ import { Personaje } from '../interfaces/dbz.interface';
 @Component({
   selector: 'app-personajes',
   templateUrl: './personajes.component.html',
-  styleUrls: ['./personajes.component.css']
 })
 export class PersonajesComponent {
-
-  @Input() personajes: Personaje[] = []
-
+  @Input
+  () personajes: Personaje[] = []; // me traigo la propiedad personajes, desde main-page.component.ts
 }
