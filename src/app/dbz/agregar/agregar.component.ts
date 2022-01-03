@@ -25,7 +25,6 @@ export class AgregarComponent {
     }
 
     this.nuevoPersonaje.emit(this.nuevo);
-
     this.nuevo = {
       nombre: '',
       poder: 0,
